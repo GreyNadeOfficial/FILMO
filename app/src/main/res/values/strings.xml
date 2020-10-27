@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Filmo</string>
+    <string name="action_filter">Filter</string>
+    <string name="loading_movies">Loading Movies</string>
+    <string name="sort_by">Sort By</string>
+    <string name="movie_guide">Filmo</string>
+    <string name="trailers">Trailers</string>
+    <string name="reviews">Reviews</string>
+    <string name="summary">Summary</string>
+    <string name="release_date">Release Date: %s</string>
+    <string name="rating">%s/10</string>
+    <string name="favorites">Favorites</string>
+    <string name="newest">Newest</string>
+    <string name="highest_rated">Highest Rated</string>
+    <string name="most_popular">Most Popular</string>
+    <string name="action_search">Search</string>
+
+
+    <string name="BanAds">ca-app-pub-4401386869031967/5781431565</string>
+    <string name="IntAds">ca-app-pub-4401386869031967/9145961501</string>
+    <string name="AppAdsId">ca-app-pub-4401386869031967~1799143891</string>
+
+    <string name="TestBan">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="TestInt">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="TestAppID">ca-app-pub-3940256099942544~3347511713</string>
+
+
+
+
+</resources>
