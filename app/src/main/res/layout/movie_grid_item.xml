@@ -1,5 +1,4 @@
-<FrameLayout
-    android:id="@+id/movie_container"
+<FrameLayout android:id="@+id/movie_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +6,14 @@
     android:layout_gravity="center"
     android:clickable="true"
     android:layout_margin="4dp"
-    android:foreground="?attr/selectableItemBackground">
+    android:foreground="?attr/selectableItemBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="7dp">
 
     <ImageView
         android:id="@+id/movie_poster"
@@ -34,5 +40,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:textColor="@android:color/white"
         android:textSize="12sp"/>
+
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

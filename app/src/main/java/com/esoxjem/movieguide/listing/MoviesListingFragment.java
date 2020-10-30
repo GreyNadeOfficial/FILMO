@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.esoxjem.movieguide.BaseApplication;
 import com.esoxjem.movieguide.Constants;
@@ -62,6 +63,7 @@ public class MoviesListingFragment extends Fragment implements MoviesListingView
         setHasOptionsMenu(true);
         setRetainInstance(true);
         ((BaseApplication) getActivity().getApplication()).createListingComponent().inject(this);
+
     }
 
     @Override
@@ -70,7 +72,10 @@ public class MoviesListingFragment extends Fragment implements MoviesListingView
         unbinder = ButterKnife.bind(this, rootView);
         initLayoutReferences();
         return rootView;
+
+
     }
+
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {

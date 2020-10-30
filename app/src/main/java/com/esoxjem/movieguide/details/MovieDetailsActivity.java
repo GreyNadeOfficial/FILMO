@@ -1,7 +1,10 @@
 package com.esoxjem.movieguide.details;
 
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NavUtils;
@@ -18,7 +21,6 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 
 public class MovieDetailsActivity extends AppCompatActivity {
 
-
     private static InterstitialAd mInterstitialAd;
 
     @Override
@@ -26,31 +28,28 @@ public class MovieDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
-
-
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
 
-        //TEST ADS
 
         mInterstitialAd = new InterstitialAd(this);
-        //Main INT
-        // mInterstitialAd.setAdUnitId("ca-app-pub-4401386869031967/9145961501");
+
+        //Main INT      cdea1744a45812d9        <-  TEST ID     5f10c20a2495ab0032397958
+        // mInterstitialAd.setAdUnitId(getString(R.string.IntAds));
 
         //TEST INT
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId(getString(R.string.TestInt));
+
 
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
-
-        mInterstitialAd.setAdListener(new AdListener()
-                                      {
+        mInterstitialAd.setAdListener(new AdListener() {
                                           public void onAdLoaded() {
-
-                                              mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                                            //  Toast.makeText(MovieDetailsActivity.this, "LOADED ADS", Toast.LENGTH_SHORT).show();
+                                            //  mInterstitialAd.loadAd(new AdRequest.Builder().build());
                                               // Code to be executed when an ad finishes loading.
                                           }
 
@@ -67,12 +66,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
                                           }
 
                                           public void onAdClosed() {
-                                              mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                                             // mInterstitialAd.loadAd(new AdRequest.Builder().build());
                                               // Code to be executed when the interstitial ad is closed.
                                           }
                                       }
         );
-
 
 
 
@@ -87,6 +85,21 @@ public class MovieDetailsActivity extends AppCompatActivity {
             }
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Toast.makeText(this, "ADS NOT LOADED", Toast.LENGTH_SHORT).show();
+        }
+
+        Toast.makeText(this, " STOP", Toast.LENGTH_SHORT).show();
+    }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

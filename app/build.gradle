@@ -64,7 +64,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //GreyNade Imps
-   // implementation 'androidx.appcompat:appcompat:1.0.2'
+   implementation 'com.google.android.gms:play-services-ads:19.5.0';
+
 
 
     //Support
@@ -89,10 +90,13 @@ dependencies {
 
     // Other
     implementation 'net.jcip:jcip-annotations:1.0'
-    implementation 'com.google.guava:guava:18.0'
+  //implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
+
+    implementation 'com.google.android.libraries.places:places:2.0.0'
+    implementation 'com.google.guava:guava:30.0-android'
     implementation 'com.squareup.moshi:moshi:1.9.2'
     implementation 'com.jakewharton:butterknife:10.2.0'
-    implementation 'com.google.firebase:firebase-ads:19.5.0'
+    //implementation 'com.google.firebase:firebase-ads:19.5.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
 
     // Dependency Injection

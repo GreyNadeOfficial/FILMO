@@ -2,10 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     tools:context=".listing.MoviesListingActivity">
 
     <include layout="@layout/toolbar" />
+
 
     <fragment
         android:id="@+id/fragment_listing"
@@ -17,7 +19,7 @@
         tools:layout="@layout/fragment_movies" />
 
 
-    <com.google.android.gms.ads.AdView
+ <com.google.android.gms.ads.AdView
         android:layout_alignParentEnd="true"
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
@@ -28,6 +30,5 @@
         ads:adSize="FULL_BANNER"
         ads:adUnitId="@string/TestBan">
     </com.google.android.gms.ads.AdView>
-
 
 </RelativeLayout>

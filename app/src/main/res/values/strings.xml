@@ -10,21 +10,27 @@
     <string name="release_date">Release Date: %s</string>
     <string name="rating">%s/10</string>
     <string name="favorites">Favorites</string>
-    <string name="newest">Newest</string>
+    <string name="newest">Latest</string>
     <string name="highest_rated">Highest Rated</string>
     <string name="most_popular">Most Popular</string>
     <string name="action_search">Search</string>
 
 
+<!--    ADS -->
+    <string name="AppAdsId">ca-app-pub-4401386869031967~1799143891</string>
+
     <string name="BanAds">ca-app-pub-4401386869031967/5781431565</string>
     <string name="IntAds">ca-app-pub-4401386869031967/9145961501</string>
-    <string name="AppAdsId">ca-app-pub-4401386869031967~1799143891</string>
+    <string name="RevAds">ca-app-pub-4401386869031967/3319639585</string>
+
+
+<!--    TEST ADS-->
+    <string name="TestAppID">ca-app-pub-3940256099942544~3347511713</string>
 
     <string name="TestBan">ca-app-pub-3940256099942544/6300978111</string>
     <string name="TestInt">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="TestAppID">ca-app-pub-3940256099942544~3347511713</string>
-
-
+    <string name="TestIntVid">ca-app-pub-3940256099942544/8691691433</string>
+    <string name="TestRev">ca-app-pub-3940256099942544/5224354917</string>
 
 
 </resources>

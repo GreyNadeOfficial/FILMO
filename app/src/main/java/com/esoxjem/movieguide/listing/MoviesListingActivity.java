@@ -4,14 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.test.espresso.IdlingResource;
-
 import com.esoxjem.movieguide.Constants;
 import com.esoxjem.movieguide.Movie;
 import com.esoxjem.movieguide.R;
@@ -23,9 +22,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.jakewharton.rxbinding2.support.v7.widget.RxSearchView;
-
 import java.util.concurrent.TimeUnit;
-
 import io.reactivex.disposables.Disposable;
 
 
@@ -33,7 +30,12 @@ public class MoviesListingActivity extends AppCompatActivity implements MoviesLi
     public static final String DETAILS_FRAGMENT = "DetailsFragment";
     private boolean twoPaneMode;
     private Disposable searchViewTextSubscription;
-    private AdView mAdView;
+   private AdView mAdView;
+
+   SwipeRefreshLayout refreshLayout;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +43,20 @@ public class MoviesListingActivity extends AppCompatActivity implements MoviesLi
         setContentView(R.layout.activity_main);
         setToolbar();
 
+        refreshLayout = findViewById(R.id.refresh);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
 
-        //ADs
 
-        mAdView = findViewById(R.id.adView);
+                refreshLayout.setRefreshing(false);
+            }
+        });
+
+
+        //ADs BANNER
+
+      mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
@@ -70,8 +82,8 @@ public class MoviesListingActivity extends AppCompatActivity implements MoviesLi
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(R.string.movie_guide);
-            getSupportActionBar().setDisplayShowTitleEnabled(true);
+           getSupportActionBar().setTitle(R.string.movie_guide);
+           getSupportActionBar().setDisplayShowTitleEnabled(true);
         }
     }
 
